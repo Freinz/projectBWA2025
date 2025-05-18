@@ -15,6 +15,10 @@ class FundraisingController extends Controller
         //
     }
 
+    public function activate_fundraising () {
+        
+    }
+
     /**
      * Show the form for creating a new resource.
      */
