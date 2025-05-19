@@ -14,7 +14,7 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
 
-        return view ('admincategories.index', compact('categories'));
+        return view ('admin.categories.index', compact('categories'));
     }
 
     /**
@@ -22,7 +22,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view ('admincategories.create');
+        return view ('admin.categories.create');
         
     }
 
@@ -47,7 +47,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view ('admincategories.edit', compact('categories'));
+        return view ('admin.categories.edit', compact('categories'));
         
     }
 

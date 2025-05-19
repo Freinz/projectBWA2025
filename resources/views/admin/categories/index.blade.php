@@ -4,9 +4,9 @@
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
                 {{ __('Manage Categories') }}
             </h2>
-            <a href="#" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
+            <a href="{{route('admin.categories.create')}}" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
                 Add New
-            </a>
+            </a> 
         </div>
     </x-slot>
 
@@ -40,11 +40,9 @@
                         </div>
                     </div>
                 @empty
-
                 <p>
                     Belum ada kateogori terbaru, silahkan ditambahkan
                 </p>
-
                 @endforelse
 
             </div>
