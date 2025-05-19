@@ -17,7 +17,7 @@ class CategoryController extends Controller
     {
         $categories = Category::all();
 
-        return view ('admin.categories.index', compact('categories'));
+        return view('admin.categories.index', compact('categories'));
     }
 
     /**
@@ -25,8 +25,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view ('admin.categories.create');
-        
+        return view('admin.categories.create');
     }
 
     /**
@@ -36,13 +35,13 @@ class CategoryController extends Controller
     {
         //
 
-        DB::transaction(function() use ($request) {
-            
+        DB::transaction(function () use ($request) {
+
             $validated = $request->validated();
 
-            if($request->hasfile('icon')) {
+            if ($request->hasfile('icon')) {
                 $iconPath = $request->file('icon')->store('icon', 'public');
-                $validated['icon'] =$iconPath;
+                $validated['icon'] = $iconPath;
             } else {
                 $iconPath = 'images/icon-category-default.png';
             }
@@ -50,11 +49,9 @@ class CategoryController extends Controller
             $validated['slug'] = Str::slug($validated['name']);
 
             $category = Category::create($validated);
-
         });
 
-        return redirect() -> route('admin.categories.index');
-
+        return redirect()->route('admin.categories.index');
     }
 
     /**
@@ -70,8 +67,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        return view ('admin.categories.edit', compact('categories'));
-        
+        return view('admin.categories.edit', compact('categories'));
     }
 
     /**
@@ -88,5 +84,16 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         //
+        DB::beginTransaction();
+
+        try {
+            $category->delete();
+            DB::commit();
+            return redirect()->route('admin.categories.index');
+        } 
+        catch (\Exception $e) {
+            DB::rollBack(); 
+            return redirect()->route('admin.categories.index');
+        }
     }
 }
