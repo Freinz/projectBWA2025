@@ -17,14 +17,14 @@
                 @forelse ($categories as $category)
                     <div class="item-card flex flex-row justify-between items-center">
                         <div class="flex flex-row items-center gap-x-3">
-                            <img src="{{Storage::url($category->icon)}}" alt="" class="rounded-2xl object-cover w-[120px] h-[90px]">
+                            <img src="{{Storage::url($category->icon)}}" alt="" class="rounded-2xl object-cover w-[90px] h-[90px]">
                             <div class="flex flex-col">
                                 <h3 class="text-indigo-950 text-xl font-bold">{{$category->name}}</h3>
                             </div>
                         </div>
                         <div class="hidden md:flex flex-col">
                             <p class="text-slate-500 text-sm">Date</p>
-                            <h3 class="text-indigo-950 text-xl font-bold">{{category->created_at}}</h3>
+                            <h3 class="text-indigo-950 text-xl font-bold">{{$category->created_at}}</h3>
                         </div>
                         <div class="hidden md:flex flex-row items-center gap-x-3">
                             <a href="#" class="font-bold py-4 px-6 bg-indigo-700 text-white rounded-full">
