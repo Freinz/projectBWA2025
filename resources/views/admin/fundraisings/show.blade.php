@@ -77,10 +77,12 @@
                 </div>
                 <hr class="my-5">
 
+                @role('fundraiser')
                 @if($goalReached)
+                 @if(!$hasRequestWithdrawal)
                 <h3 class="text-indigo-950 text-2xl font-bold">Withdraw Donations</h3>
 
-                <form method="POST" action="#" enctype="multipart/form-data">
+                <form method="POST" action="{{route('admin.fundraising_withdrawals.store', $fundraising)}}" enctype="multipart/form-data">
                     @csrf
 
                     <div>
@@ -97,7 +99,7 @@
 
                     <div class="mt-4">
                         <x-input-label for="bank_account_number" :value="__('bank_account_number')" />
-                        <x-text-input id="bank_account_number" class="block mt-1 w-full" type="text" name="bank_account_number" :value="old('bank_account_number')" required autofocus autocomplete="bank_account_number" />
+                        <x-text-input id="bank_account_number" class="block mt-1 w-full" type="number" name="bank_account_number" :value="old('bank_account_number')" required autofocus autocomplete="bank_account_number" />
                         <x-input-error :messages="$errors->get('bank_account_number')" class="mt-2" />
                     </div>
 
@@ -109,6 +111,8 @@
                     </div>
                 </form>
                 @endif
+                @endif
+                @endrole
 
                 <hr class="my-5">
 

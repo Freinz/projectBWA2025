@@ -77,4 +77,8 @@ class DonaturController extends Controller
     {
         //
     }
+
+    public function my_withdrawals() {
+
+    }
 }
