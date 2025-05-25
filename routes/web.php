@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DonaturController;
+use App\Http\Controllers\FrontController;
 use App\Http\Controllers\FundraiserController;
 use App\Http\Controllers\FundraisingController;
 use App\Http\Controllers\FundraisingPhaseController;
@@ -11,9 +12,7 @@ use App\Http\Controllers\ProfileController;
 use App\Models\FundraisingPhase;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [FrontController::class, 'index'])->name('front.index');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
