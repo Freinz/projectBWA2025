@@ -57,6 +57,7 @@
                     </div>
                 </div>
                 <hr class="my-5">
+                @if($fundraisingWithdrawal->has_sent)
                 <h3 class="text-indigo-950 text-xl font-bold mb-5">Sent to:</h3>
                 <div class="flex flex-row gap-x-10">
                     <div>
@@ -73,8 +74,6 @@
                     </div>
                 </div>
                 <hr class="my-5">
-
-                @if($fundraisingWithdrawal->has_sent)
                 <h3 class="text-indigo-950 text-xl font-bold mb-5">Uang Sudah Ditransfer :</h3>
                 <img src="{{Storage::url($fundraisingWithdrawal->proof)}}" alt="" class="rounded-2xl object-cover w-[300px] h-[200px] mb-3">
                 <hr class="my-5">
@@ -105,7 +104,7 @@
                 @endif
 
 
-                @endif 
+                @endif
             </div>
         </div>
     </div>
