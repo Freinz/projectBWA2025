@@ -52,7 +52,7 @@
                 </div>
                 <hr class="my-5">
                 <h3 class="text-indigo-950 text-xl font-bold mb-5">Proof of Payment</h3>
-                <img src="{{Storage::url('$donatur->proof')}}" alt="" class="rounded-2xl object-cover w-[300px] h-[200px] mb-3">
+                <img src="{{Storage::url($donatur->proof)}}" alt="" class="rounded-2xl object-cover w-[300px] h-[200px] mb-3">
                 @if(!$donatur->is_paid)
                 <hr class="my-5">
                 <form action="{{route('admin.donaturs.update', $donatur)}}" method="POST">
