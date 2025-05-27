@@ -70,13 +70,19 @@
                 </div>
                 <progress id="fund" value="{{$fundraising->getPercentageAttribute()}}" max="100" class="w-full h-[6px] rounded-full overflow-hidden"></progress>
             </div>
-            <!-- <div class="flex flex-col gap-[10px] p-5 rounded-[20px] bg-[#F6ECE2]">
-                    <h2 class="font-semibold text-sm">Mereka Senang dan Bahagia</h2>
-                    <div class="aspect-[61/30] rounded-2xl bg-[#D9D9D9] overflow-hidden">
-                        <img src="{{asset('assets/images/thumbnails/support-finished.png')}}" class="w-full h-full object-cover" alt="thumbnail">
-                    </div>
-                    <p class="text-sm leading-[26px]">Kami bersyukur bahwa seluruh dana sudah terkumpul dan sudah diberikan kpd setiap penerima untuk membeli bahan pokok.</p>
-                </div> -->
+
+            @forelse($fundraising->fundraising_phases as $phase)
+            <div class="flex flex-col gap-[10px] p-5 rounded-[20px] bg-[#F6ECE2]">
+                <h2 class="font-semibold text-sm">{{$phase->name}}</h2>
+                <div class="aspect-[61/30] rounded-2xl bg-[#D9D9D9] overflow-hidden">
+                    <img src="{{Storage::url($phase -> photo)}}" class="w-full h-full object-cover" alt="thumbnail">
+                </div>
+                <p class="text-sm leading-[26px]">{{$phase->notes}}</p>
+            </div>
+            @empty
+            @endforelse
+
+
             <div class="flex flex-col gap-[2px]">
                 <h2 class="font-semibold text-sm">About</h2>
                 <p class="desc-less text-sm leading-[26px]">{{$fundraising->about}}</button></p>

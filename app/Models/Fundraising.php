@@ -40,9 +40,9 @@ class Fundraising extends Model
         return $this -> donaturs()-> sum('total_amount');
     }
 
-    // public function fundraisingphases() {
-    //     return $this -> hasMany(FundraisingPhase::class);
-    // }
+    public function fundraising_phases() {
+        return $this -> hasMany(FundraisingPhase::class);
+    }
 
     public function withdrawals() {
         return $this -> hasMany(FundraisingWithdrawal::class);
