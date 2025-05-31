@@ -11,8 +11,8 @@
                         <img src="{{asset('assets/images/icons/loc.svg')}}" alt="icon">
                     </div>
                     <div class="flex flex-col text-white">
-                        <p class="text-xs leading-[18px]">Location</p>
-                        <p class="font-semibold text-sm">Bali, Indonesia</p>
+                        <p class="text-xs leading-[18px]">Lokasi</p>
+                        <p class="font-semibold text-sm">Indonesia</p>
                     </div>
                 </div>
                 <a href="" class="w-10 h-10 flex shrink-0">
@@ -20,16 +20,17 @@
                 </a>
             </nav>
             <div class="mt-[30px] z-10">
-                <h1 class="font-extrabold text-2xl leading-[36px] text-white text-center">Help Other People.<br>Life Becomes Happier.</h1>
+                <h1 class="font-extrabold text-2xl leading-[36px] text-white text-center">Menolong Sesama.<br>Membawa Kebahagiaan.</h1>
+                <p class="text-base leading-[24px] text-white text-center">Hidup Terasa Lebih Bermakna <br>Ketika Membagikan Kebahagiaan Kepada Orang Lain</p>
             </div>
             <div class="w-full h-fit overflow-hidden -mt-[33px]">
                 <img src="{{asset('assets/images/backgrounds/hero-background.png')}}" class="w-full h-full object-contain" alt="background">
-            </div>
+        </div>
         </div>
         <div id="popular-fundrising" class="mt-8">
             <div class="px-4 flex justify-between items-center">
-                <h2 class="font-bold text-lg">Popular <br>Fundraisings</h2>
-                <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a>
+                <h2 class="font-bold text-lg">Kategori<br>Penggalangan Dana</h2>
+                <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Cari Yang Lain</a>
             </div>
             <div class="main-carousel mt-[14px]">
                 
@@ -50,8 +51,8 @@
 
         <div id="best-choices" class="mt-8 -mb-6">
             <div class="px-4 flex justify-between items-center">
-                <h2 class="font-bold text-lg">KitaBantu <br>Best Choices</h2>
-                <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a>
+                <h2 class="font-bold text-lg">Mau Berbuat Baik apa<br>Hari ini</h2>
+                <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Cari Yang Lain</a>
             </div>
             <div class="main-carousel mt-[14px]">
 
@@ -82,8 +83,8 @@
 
         <div id="latest-fundrising" class="mt-8">
             <div class="px-4 flex justify-between items-center">
-                <h2 class="font-bold text-lg">Latests <br>Fundraisings</h2>
-                <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Explore All</a>
+                <h2 class="font-bold text-lg">Rekomendasi <br>Penggalangan Dana</h2>
+                <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Cari Yang Lain</a>
             </div>
             <div class="flex flex-col gap-4 mt-[14px] px-4">
                 @forelse ($fundraisings as $fundraising)

@@ -12,8 +12,8 @@
                 </a>
             </div>
             <div class="flex flex-col items-center text-center">
-                <p class="text-xs leading-[18px] text-white">Details</p>
-                <p class="font-semibold text-sm text-white">#WeNeedHelp</p>
+                <p class="text-xs leading-[18px] text-white">Detail</p>
+                <p class="font-semibold text-sm text-white">#TolongKami</p>
             </div>
             <a href="" class="w-10 h-10 flex shrink-0">
                 <img src="{{asset('assets/images/icons/like.svg')}}" alt="icon">
@@ -31,23 +31,23 @@
             <div class="w-[30px] h-[30px] flex shrink-0">
                 <img src="{{asset('assets/images/icons/lovely.svg')}}" alt="icon">
             </div>
-            <p class="font-semibold text-sm text-white">This Fundraising has been finished</p>
+            <p class="font-semibold text-sm text-white">Penggalangan dana ini telah selesai</p>
         </div>
         @else
         <div id="status" class="w-full h-[92px] bg-[#FF7815] rounded-t-[40px] pt-3 pb-[50px] flex gap-2 justify-center items-center -mb-[38px]">
             <div class="w-[30px] h-[30px] flex shrink-0">
                 <img src="{{asset('assets/images/icons/lovely.svg')}}" alt="icon">
             </div>
-            <p class="font-semibold text-sm text-white">Everyone deserves your best help</p>
+            <p class="font-semibold text-sm text-white">Setiap Kebaikanmu sangat berarti</p>
         </div>
         @endif
 
         <div id="content" class="w-full bg-white rounded-t-[40px] flex flex-col gap-5 p-[30px_24px_60px]">
             <div class="flex flex-col gap-[10px]">
                 @if($fundraising->has_finished)
-                <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">FINISHED</p>
+                <p class="badge bg-[#76AE43] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">SELESAI</p>
                 @else
-                <p class="badge bg-[#40BCD9] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">IN PROGRESS</p>
+                <p class="badge bg-[#40BCD9] rounded-full p-[6px_12px] font-bold text-xs text-white w-fit leading-[18px]">DALAM PROSES</p>
                 @endif
                 <h1 class="font-extrabold text-[26px] leading-[39px]">{{$fundraising->name}}</h1>
                 <div class="flex items-center gap-2">
@@ -63,7 +63,7 @@
                 </div>
             </div>
             <div class="flex flex-col gap-2">
-                <h2 class="font-semibold text-sm">Progress</h2>
+                <h2 class="font-semibold text-sm">Proses</h2>
                 <div class="flex items-center justify-between">
                     <p class="text-sm text-[#66697A]">Rp {{number_format ($fundraising->totalReachedAmount(), 0, ',', '.')}}</p>
                     <p class="font-bold text-[20px] leading-[30px] text-[#76AE43]">Rp {{number_format ($fundraising->target_amount, 0, ',', '.')}}</p>
@@ -75,7 +75,7 @@
             <div class="flex flex-col gap-[10px] p-5 rounded-[20px] bg-[#F6ECE2]">
                 <h2 class="font-semibold text-sm">{{$phase->name}}</h2>
                 <div class="aspect-[61/30] rounded-2xl bg-[#D9D9D9] overflow-hidden">
-                    <img src="{{Storage::url($phase -> photo)}}" class="w-full h-full object-cover" alt="thumbnail">
+                      <img src="{{Storage::url($phase -> photo)}}" class="w-full h-full object-cover" alt="thumbnail">
                 </div>
                 <p class="text-sm leading-[26px]">{{$phase->notes}}</p>
             </div>
@@ -84,12 +84,12 @@
 
 
             <div class="flex flex-col gap-[2px]">
-                <h2 class="font-semibold text-sm">About</h2>
+                <h2 class="font-semibold text-sm">Cerita Penggalangan Dana</h2>
                 <p class="desc-less text-sm leading-[26px]">{{$fundraising->about}}</button></p>
             </div>
             <div class="flex flex-col gap-3">
                 <div class="flex items-center justify-between">
-                    <h2 class="font-semibold text-sm">Supporters ({{$fundraising->donaturs->count()}})</h2>
+                    <h2 class="font-semibold text-sm">Bantuan ({{$fundraising->donaturs->count()}})</h2>
                     <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">View All</a>
                 </div>
                 <div class="flex flex-col gap-4">
@@ -118,7 +118,7 @@
     </div>
 
     @if(!$goalReached)
-    <a href="{{route('front.support', $fundraising->slug)}}" class="p-[14px_20px] bg-[#76AE43] rounded-full text-white w-fit mx-auto font-semibold hover:shadow-[0_12px_20px_0_#76AE4380] transition-all duration-300 fixed bottom-[30px] transform -translate-x-1/2 left-1/2 z-40 text-nowrap">Send My Support Now</a>
+    <a href="{{route('front.support', $fundraising->slug)}}" class="p-[14px_20px] bg-[#76AE43] rounded-full text-white w-fit mx-auto font-semibold hover:shadow-[0_12px_20px_0_#76AE4380] transition-all duration-300 fixed bottom-[30px] transform -translate-x-1/2 left-1/2 z-40 text-nowrap">Kirim Bantuan Sekaran</a>
     @endif
 </section>
 @endsection
