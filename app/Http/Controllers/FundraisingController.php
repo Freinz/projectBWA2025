@@ -121,7 +121,7 @@ class FundraisingController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateFundraisingRequest $request, Fundraising $fundraising)
+public function update(UpdateFundraisingRequest $request, Fundraising $fundraising)
     {
         //
         DB::transaction(function () use ($request, $fundraising) {

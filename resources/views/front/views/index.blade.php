@@ -118,7 +118,7 @@
                 <div class="flex shrink-0">
                     <img src="{{asset('assets/images/icons/heart.svg')}}" alt="icon">
                 </div>
-                <span class="font-semibold text-sm text-white">Discover</span>
+                <span class="font-semibold text-sm text-white">Jelajahi</span>
             </a>
             <a href="" class="flex items-center justify-center w-[56px] h-[52px] p-[14px_16px]">
                 <div class="flex shrink-0 w-6 h-6 overflow-hidden">

@@ -11,7 +11,7 @@
                     <img src="{{asset('assets/images/icons/back.svg')}}" alt="icon">
                 </a>
             </div>
-            <p class="font-semibold text-sm text-white">Browse Fundraisings</p>
+            <p class="font-semibold text-sm text-white">Cari Penggalangan Dana</p>
             <a href="" class="w-10 h-10 flex shrink-0">
                 <img src="{{asset('assets/images/icons/menu-dot.svg')}}" alt="icon">
             </a>

@@ -90,14 +90,14 @@
             <div class="flex flex-col gap-3">
                 <div class="flex items-center justify-between">
                     <h2 class="font-semibold text-sm">Bantuan ({{$fundraising->donaturs->count()}})</h2>
-                    <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">View All</a>
+                    <a href="" class="p-[6px_12px] rounded-full bg-[#E8E9EE] font-semibold text-sm">Lihat Semua</a>
                 </div>
                 <div class="flex flex-col gap-4">
 
                     @forelse($fundraising->donaturs as $donatur)
                     <div class="flex items-center gap-3">
                         <div class="w-[50px] h-[50px] flex shrink-0 rounded-full overflow-hidden">
-                            <img src="{{Storage::url($donatur->proof)}}" class="w-full h-full object-cover" alt="avatar">
+                            <img src="{{ asset('assets/images/photos/avatar-default.svg') }}" class="w-full h-full object-cover" alt="avatar">
                         </div>
                         <div class="flex flex-col gap-[2px] w-full">
                             <div class="flex items-center justify-between">
@@ -118,7 +118,7 @@
     </div>
 
     @if(!$goalReached)
-    <a href="{{route('front.support', $fundraising->slug)}}" class="p-[14px_20px] bg-[#76AE43] rounded-full text-white w-fit mx-auto font-semibold hover:shadow-[0_12px_20px_0_#76AE4380] transition-all duration-300 fixed bottom-[30px] transform -translate-x-1/2 left-1/2 z-40 text-nowrap">Kirim Bantuan Sekaran</a>
+    <a href="{{route('front.support', $fundraising->slug)}}" class="p-[14px_20px] bg-[#76AE43] rounded-full text-white w-fit mx-auto font-semibold hover:shadow-[0_12px_20px_0_#76AE4380] transition-all duration-300 fixed bottom-[30px] transform -translate-x-1/2 left-1/2 z-40 text-nowrap">Kirim Bantuan Sekarang</a>
     @endif
 </section>
 @endsection
